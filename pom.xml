@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.huangcj</groupId>
-    <artifactId>akcheck</artifactId>
+    <artifactId>akregister</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>akcheck</name>
-    <description>akcheck</description>
+    <name>akregister</name>
+    <description>akregister</description>
     <properties>
         <java.version>17</java.version>
     </properties>
