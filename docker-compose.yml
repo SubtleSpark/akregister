@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ak:
+    image: registry.cn-shanghai.aliyuncs.com/hcj_fortest/ak:1.0.0
+    ports:
+      - 18888:8080
+
+  akregister:
+    image: registry.cn-shanghai.aliyuncs.com/hcj_fortest/akregister:0.0.2
+    environment:
+      zk-addr: 120.48.75.227:2181
+      # ak.ports 一致
+      aktool-address: 'http://ak:18888'
+    depends_on: [ ak ]
+

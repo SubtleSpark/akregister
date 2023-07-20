@@ -1,6 +1,7 @@
 package com.huangcj.akcheck.check;
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.curator.framework.CuratorFramework;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +19,10 @@ import java.util.Collections;
 @Service
 @Slf4j
 public class AkCheck {
-    @Value("${aktool.address}")
-    String akAddress;
+    @Value("${aktool-address}")
+    private String akAddress;
+    @Autowired
+    private CuratorFramework curator;
     @Autowired
     private RestTemplate restTemplate;
 
@@ -37,6 +40,7 @@ public class AkCheck {
 
         // todo 异常处理
         log.error("ak service error");
+//        curator.delete()
 
     }
 }
